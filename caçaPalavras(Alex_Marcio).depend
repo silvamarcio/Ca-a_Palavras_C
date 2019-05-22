@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1558532556 source:e:\users\marcio\workspace\caçapalavras(alex_marcio)\main.c
+1558535110 source:e:\users\marcio\workspace\caçapalavras(alex_marcio)\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -14,7 +14,7 @@
 	<string.h>
 	<stdio.h>
 
-1558531578 e:\users\marcio\workspace\caçapalavras(alex_marcio)\functions2.c
+1558535623 e:\users\marcio\workspace\caçapalavras(alex_marcio)\functions2.c
 	<string.h>
 	<stdio.h>
 

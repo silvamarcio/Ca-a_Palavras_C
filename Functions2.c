@@ -44,3 +44,5 @@ void palavraNaMatriz(char mat[10][10],char palavra[9],int L,int C,int tamanho,in
 }
 
 
+
+
