@@ -2,23 +2,29 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
-#include "Functions.c"
+#include "Functions2.c"
 int main()
 {
     setlocale(LC_ALL,"");
     char mat[10][10];
-    char palavra[9];
+    char palavra[10];
+    char opcao;
+    int jogar = 0;
 
+    int tentativas = 0;
     int primeiraLetra[2];
     int ultimaLetra[2];
-    int i,j,inicioL,inicioC,fimL,fimC;;
+    int i,j;
+    int inicioL= 0;
+    int inicioC,fimL,fimC = 0;
     int horizontal = 0;
     int vertical = 0;
     srand(time(0));
 
+
     printf("digite sua palavra: ");
     gets(palavra);
-    while(strlen(palavra) >=9)
+    while(strlen(palavra) >=10)
     {
         printf("palavra muito grande, maximo de 9 caracteres\n");
         printf("digite sua palavra: ");
@@ -64,9 +70,47 @@ int main()
 
     }
 //teste da posição.
-printf("\n");
-   procurarPalavra(inicioL,inicioC,fimL,fimC);
+    printf("\n");
+ int acertou = 0;
+ while(acertou == 0){
+   printf("\nOnde esta sua palavra?\n");
+   printf("ela inicia em qual linha, e em qual coluna?:\n  ");
+   printf("você deve separar os valores por espaco ex:  x y : ");
+   scanf("%d %d",&inicioL,&inicioC);
 
+   printf("\ne em qual linha, e em qual coluna ela termina?:\n  ");
+   printf("você deve separar os valores por espaco ex:  x y : ");
+   scanf("%d %d",&fimL,&fimC);
+
+
+   tentativas++;
+
+   if(inicioL == primeiraLetra[0] && inicioC == primeiraLetra[1]
+      && fimL == ultimaLetra[0] && fimC == ultimaLetra[1]){
+        acertou = 1;
+        printf("acertou\n");
+        printf("Numero de tantativas: %d",tentativas);
+        printf("\nJogar novamente? (1 = sim / 0 = não): ");
+        scanf("%d",&jogar);
+
+   }
+   else{
+        fflush(stdin);
+        printf("Você errou!!\n");
+        printf("Continuar ou Sair( C/S): ");
+        scanf("%c",&opcao);
+        if(opcao =='s' || opcao == 'S'){
+            printf("Desistiu com %d tentativas",tentativas);
+            acertou = 1;
+        }
+
+     }
+   }
 
     return 0;
-}
+ }
+
+
+
+
+
